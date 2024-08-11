@@ -4,16 +4,9 @@
 #include <condition_variable>
 #include <thread>
 #include <iostream>
-
-struct Task
-{
-    int taskId;
-    std::string taskData;
-    Task(int id, std::string data) : taskId(id), taskData(data) {}
-};
+#include "task.h"
 
 std::queue<Task> taskQueue;
-
 std::mutex mtx;
 std::condition_variable cv;
 bool done = false;
