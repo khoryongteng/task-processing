@@ -1,0 +1,9 @@
+services:
+  build:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/workspace
+    working_dir: /workspace
+    command: bash -c "cmake -S . -B build && cmake --build build"
